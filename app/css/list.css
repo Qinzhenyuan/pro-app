@@ -1,0 +1,9 @@
+@charset "utf-8";
+.header{display: flex;flex-wrap: wrap;}
+.header .header_menu{display: flex;background: #8e488e;color: white;width: 100%;}
+.header .header_menu h2{flex: 1;line-height: 20px;font-size:1rem;text-align: center;}
+.header .header_menu span{flex: 1;line-height: 20px;font-size:1rem;display: block;margin: 10px;}
+.header .header_menu span:last-child{text-align: right;}
+
+.header .header_screen{display:flex; width: 100%;background: #f1f5f6;}
+.header .header_screen h3{flex: 1;text-align: center;}
