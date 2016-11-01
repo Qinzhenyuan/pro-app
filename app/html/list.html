@@ -7,21 +7,29 @@
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../font/iconfont.css" />
 		<link rel="stylesheet" href="../css/list.css" />
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
+		<script type="text/javascript" src="../js/list.js" ></script>
 	</head>
 	<body>
-		<header class="header">
+		<!--头部-->
+		<header class="xheader">
 			<!--头部菜单-->
-			<div class="header_menu">
+			<div class="xheader_menu">
 				<span class="iconfont icon-fanhui"></span>
 				<h2>商品列表</h2>
 				<span class="iconfont icon-fenlei"></span>
 			</div>
-			<!--头部筛选-->
-			<div class="header_screen">
-				<h3>分类<span class="iconfont icon-jiantou"></span></h3>
-				<h3>品牌<span class="iconfont icon-jiantou"></span></h3>
-			</div>
 		</header>
+		<!--内容-->
+		<div class="xcontent">
+			<!--筛选菜单-->
+			<header class="xheader_screen">
+				<h3 class="col-xs-6">分类<span class="iconfont icon-jiantou"></span></h3>
+				<h3 class="col-xs-6">品牌<span class="iconfont icon-jiantou"></span></h3>
+			</header>
+			<!--Ajax懒加载-->
+		</div>
 		<footer class="footer"></footer>
 	</body>
 </html>

@@ -3,7 +3,7 @@
 /*重置样式*/
 html{
 	/*默认字体大小*/
-	font:"微软雅黑";
+	font-family:sans-serif;
 }
 body{
 	margin: 0;
