@@ -1,0 +1,14 @@
+.xheader{height: 40px;}
+.xheader .xheader_menu{background: #8e488e;color: white;align-items: center;height: 40px;}
+.xheader .xheader_menu h2{font-size:16px;text-align: center;display: inline-block;}
+.xheader .xheader_menu span{font-size:20px;display: inline-block;margin: 0 10px;}
+.xheader .xheader_menu span:last-child{text-align: right;}
+
+.xcontent .xheader_screen{background: #f1f5f6;height: 50px;}
+.xcontent .xheader_screen h3{text-align: center;height: 20px;font-size: 12px;}
+.xcontent .xheader_screen h3:last-child{border-left:solid #000 1px ;}
+.xcontent .xheader_screen span{margin-left: 5px;}
+.xcontent .goods{background: #fafafa;padding: 2px;border: solid 1px #f1f5f6;}
+.xcontent  .goods a{margin:3px 10px;display: block;color:black;}
+.xcontent  .goods p{margin-left: 10px;}
+.xcontent  .goods p span{margin-right:5px;}
