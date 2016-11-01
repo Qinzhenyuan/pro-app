@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/abc_dataPage.css"/>
+		<style type="text/css">
+			/*body,form,label,input,p,datalist,option{margin: 0;padding: 0;}*/
+			*{margin: 0;padding: 0;}
+			form{
+				background-color: white;
+				margin-top: 20px;
+				padding-top: 20px;
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+			form label,form input{
+				border: 1px solid #ddd;
+			}
+			form label{
+			    display: inline-block;
+			    width: 80px;
+			    height: 30px;	
+			    background-color: rgb(238,238,238);		    		    
+			}
+			form .last{
+			    height: 165px;
+			}
+			form input{
+				height: 30px;
+				width: 268px;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<p>
+				<label for="nickname">用户名</label>
+				<input type="text" id="nickname" name="nickname" autofocus required />
+			</p>
+			<p>
+				<label for="mobile">手机号码</label>
+				<input type="telephone" id="mobile" name="mobile" pattern="1[3578]\d{9}"/>
+			</p>
+			<p>
+				<label class="last" for="shippingAddress">收货地址</label>
+				<input type="text" id="shippingAddress" name="shippingAddress" list="provincelist" placeholder="选择省" />
+				<datalist id="provincelist"></datalist>
+				<input type="text" id="shippingAddress" name="shippingAddress" list="citylist" placeholder="选择市" />
+				<datalist id="citylist"></datalist>
+				<input type="text" id="shippingAddress" name="shippingAddress" list="countylist" placeholder="选择区/县" />
+				<datalist id="countylist"></datalist>
+				<input type="text" value="" placeholder="详细地址" />				
+			</p>
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>
