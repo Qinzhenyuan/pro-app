@@ -116,7 +116,7 @@
 				success:function(res){
 					$.each(res, function(idx,ele) {
 						if(ele.category == $fl_html){
-							var $div = $("<div/>").addClass("goods col-xs-6 "+ele.code+"").html("<fieldset><img src="+ele.imgUrl+" class='col-xs-12'/><figcaption><a href='#'>"+ele.title+"</a></figcaption><p><span class='iconfont icon-jifen'></span>"+ele.price+"</p></fieldset>")
+							var $div = $("<div/>").addClass("goods col-xs-6").attr({"data-code":ele.code}).html("<fieldset><img src="+ele.imgUrl+" class='col-xs-12'/><figcaption><a href='#'>"+ele.title+"</a></figcaption><p><span class='iconfont icon-jifen'></span><b>"+ele.price+"</b></p></fieldset>")
 							$div.appendTo($xcontent);
 						}
 					});
@@ -141,7 +141,59 @@
 		$footer_div.singleTap(function(){
 			//本身添加激活类   其他兄弟节点移除
 			$(this).addClass("active").siblings("div").removeClass("active");
-		})
+		});
+		
+		//先获取本地存储
+		var datalist = localStorage.getItem('datalist');
+		//如果没有则返回空数组
+		datalist = datalist ? JSON.parse(datalist) : [];
+		
+		//点击图片添加商品信息到本地存储
+		//事件委托
+		$xcontent.on("singleTap","div",function(){
+			//获取当前的商品编号
+			var $code = $(this).attr("data-code");
+			//获取图片路径
+			var $imgUrl = $(this).find("img").attr("src");
+			//获取商品名称
+			var $title = $(this).find("figcaption a").html();
+			//获取商品价格
+			var $price = $(this).find("b").html();
+			//商品的数量   初始
+			var $num =  1;
+			//console.log($price+","+$code+","+$imgUrl+","+$title);
+			
+			//本地存储
+			var flag = false; //用于判断数组中是否已存在该商品
+			datalist.forEach(function(ele,idx){
+				//如果有相等的 则已存在
+				if(ele.code == $code){
+					flag = true;
+					//已存在该商品  在原来数量上加一
+					ele.num += 1; 
+				}
+			});
+			
+			//如果数组不存在该商品,则保存该商品信息
+			if(!flag){
+				//用对象存储当前信息
+				var obj = {};
+				obj.title = $title; //商品名称
+				obj.code = $code; //商品编号
+				obj.imgUrl = $imgUrl; // 商品图片路径
+				obj.price = $price;  // 商品价格
+				obj.num = $num; //商品数量
+				// 把当前单词写入数组
+				datalist.push(obj);
+			}
+			
+			// 保存到本地存储
+			localStorage.setItem('datalist',JSON.stringify(datalist));
+			console.log(datalist);
+			
+		});
+		 
+		
 		
 		
 		//加载的函数
@@ -151,7 +203,7 @@
 				success:function(res){
 					$.each(res, function(idx,ele) {
 						if(num > idx && index < idx){
-							var $div = $("<div/>").addClass("goods col-xs-6 "+ele.code+"").html("<fieldset><img src="+ele.imgUrl+" class='col-xs-12'/><figcaption><a href='#'>"+ele.title+"</a></figcaption><p><span class='iconfont icon-jifen'></span>"+ele.price+"</p></fieldset>")
+							var $div = $("<div/>").addClass("goods col-xs-6 ").attr({"data-code":ele.code}).html("<fieldset><img src="+ele.imgUrl+" class='col-xs-12'/><figcaption><a href='#'>"+ele.title+"</a></figcaption><p><span class='iconfont icon-jifen'></span><b>"+ele.price+"</b></p></fieldset>")
 							$div.appendTo($xcontent);
 						}
 					});

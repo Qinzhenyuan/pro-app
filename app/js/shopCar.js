@@ -7,24 +7,9 @@
 		
 		var data = JSON.parse(localStorage.getItem("datalist"));
 		//console.log(data)
-//		<div class="goods">
-//			<div class="part1">
-//				<span class="iconfont icon-yuanquan"></span>
-//				<img src="../img/list_yin1.jpg"/>
-//			</div>
-//			<div class="part2">
-//				<h4>天然和田玉玉牌</h4>
-//				<p>&yen;41,599.00</p>
-//				<div class="shuliang">
-//					<span class="sub iconfont icon-jian"></span>
-//					<span class="num">1</span>
-//					<span class="add iconfont icon-jia"></span>
-//					<span class="iconfont icon-lajitong0-copy"></span>
-//				</div>
-//			</div>
-//		</div>
 		
 		//内容框
+		//内容生成
 		var $xcontent = $(".xcontent");
 		data.forEach(function(ele,idx){
 			var $goods = $("<div/>").addClass("goods"+" "+ele.code);
@@ -32,6 +17,11 @@
 			var $part2 = $("<div/>").addClass("part2").html("<h4>"+ele.title+"</h4><p>&yen;"+ele.price+"</p><div class='shuliang'><span class='sub iconfont icon-jian'></span><span class='num'>1</span><span class='add iconfont icon-jia'></span><span class='iconfont icon-lajitong0-copy'></span></div>");
 			$goods.append($part1).append($part2).appendTo($xcontent);
 		});
+		
+		var $sub = $(".sub"); //减
+		var $add = $(".add"); //加
+		var $num = $(".num"); //数量
+		//修改数量
 		
 	});
 })();

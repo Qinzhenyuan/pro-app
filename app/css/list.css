@@ -38,6 +38,9 @@
   height: 20px;
   font-size: 12px; }
 
+.xheader .xheader_screen b {
+  font-weight: 100; }
+
 .xheader .xheader_screen h3:last-child {
   border-left: solid #000 1px; }
 
@@ -97,7 +100,7 @@
 .classify-menu .leval3 li {
   display: none; }
 
-.classify-menu .leval2 .active a {
+.classify-menu .leval3 .active a {
   background: #ffffff;
   color: #e80080;
   text-decoration: none; }
