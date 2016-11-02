@@ -34,6 +34,7 @@ html {
   background: #8E488E;
   position: fixed;
   top: 0;
+  z-index: 99999;
 }
 
 .hxy-layout-hd .hxy-logo {
