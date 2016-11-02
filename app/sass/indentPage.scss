@@ -3,18 +3,18 @@
 .xheader .xheader_menu h2{font-size:16px;text-align: center;display: inline-block;flex: 1;padding: 0;margin: 0;}
 .xheader .xheader_menu span{font-size:20px;display: inline-block;margin: 0 10px;}
 .xheader .xheader_menu span:last-child{text-align: right;}
-nav{
+.navbox{
     display: flex;
     padding: 10px;
     height: 44px;
 }
-nav div{
+.navbox div{
     flex: 1;
     line-height: 44px;
     text-align: center;
     border-right: 1px solid #ccc;
 }
-nav div:last-child{
+.navbox div:last-child{
     border: none;
 }
 .content div p{
