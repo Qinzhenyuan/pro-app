@@ -1,0 +1,77 @@
+a {
+  text-decoration: none; }
+
+.xheader .xheader_menu {
+  background: #8e488e;
+  color: white;
+  align-items: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 100%; }
+
+.xheader .xheader_menu a {
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  flex: 1;
+  padding: 10px 0;
+  margin: 0;
+  transition: all 0.5s; }
+
+.xheader .xheader_menu span {
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 5px; }
+
+.xheader .xheader_menu span:last-child {
+  text-align: right; }
+
+.active {
+  background: white;
+  color: black; }
+
+.tabs {
+  background-size: auto 100%;
+  width: 100%;
+  overflow: hidden; }
+
+.news-list {
+  padding: 0; }
+
+.news-list li {
+  list-style: none;
+  font-size: 1em; }
+
+.tu {
+  text-align: center; }
+
+.details p {
+  color: gray;
+  font-size: 1em; }
+
+.details .b {
+  color: black;
+  font-size: 1.2em; }
+
+.pj {
+  border-bottom: 8px solid darkgray; }
+
+.pj img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; }
+
+.pj .one {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 5px;
+  border-bottom: 1px solid darkgray; }
+
+.pj .xing {
+  margin: 5px 0;
+  color: red; }
+
+.pj .day, .buy {
+  color: darkgray;
+  font-size: 0.9em; }

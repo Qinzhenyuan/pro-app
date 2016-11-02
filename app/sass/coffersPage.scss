@@ -1,0 +1,50 @@
+
+.xheader .xheader_menu{background: #8e488e;color: white;align-items: center;height: 40px;display: flex;align-items: center;width: 100%;}
+.xheader .xheader_menu h2{font-size:16px;text-align: center;display: inline-block;flex: 1;padding: 0;margin: 0;}
+.xheader .xheader_menu span{font-size:20px;display: inline-block;margin: 0 10px;}
+.xheader .xheader_menu span:last-child{text-align: right;}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+    background-color: white;
+}
+nav div:first-child{
+    border-right: 1px solid #ccc;
+}
+nav div{
+    flex: 1;
+    text-align: center;         
+}
+.seclist{
+    margin-top: 10px;
+    display: flex;
+    height: 36px;
+    background-color: white;
+    border-top: 1px solid #bbb;
+}
+.seclist li{
+    flex: 1;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    border-right: 1px solid #ccc;    
+}
+.seclist li:last-child{
+    border: none;
+}
+.jsonlist{
+    background-color: white;
+}
+.jsonlist li{
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+.jsonlist li p{
+    flex: 1;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}

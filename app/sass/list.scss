@@ -1,0 +1,43 @@
+//头部菜单
+.xheader{position: fixed;top: 0;width: 100%;z-index: 5;}
+.xheader .xheader_menu{background: #8e488e;color: white;height: 40px;display: flex;align-items: center;width: 100%;}
+.xheader .xheader_menu h2{font-size:16px;text-align: center;display: inline-block;flex: 1;padding: 0;margin: 0;}
+.xheader .xheader_menu span{font-size:20px;display: inline-block;margin: 0 10px;flex: 1;}
+.xheader .xheader_menu span:last-child{text-align: right;}
+
+//头部筛选
+.xheader .xheader_screen{background: #f1f5f6;height: 50px;}
+.xheader .xheader_screen h3{text-align: center;height: 20px;font-size: 12px;}
+.xheader .xheader_screen b{font-weight: 100;}
+.xheader .xheader_screen h3:last-child{border-left:solid #000 1px ;}
+.xheader .xheader_screen span{display: inline-block;margin-left: 5px;-webkit-transition: -webkit-transform 1s;}
+.xheader .xheader_screen .active{-webkit-transform: rotateX(180deg);color:#8e488e ;}
+.xheader .xheader_screen .active2{color:#8e488e;}
+
+//分类菜单
+.xheader .active3{display: flex;}
+.classify-menu{width:100%;position: absolute;top:90px;display: none;height: 1000px;}
+.classify-menu a{color: #000;line-height: 38px;padding-left: 5px;display: block;}
+.classify-menu .leval1{background: #e9e9e9;padding: 0;}
+.classify-menu .leval1 .active a{background: #f2f2f2;color: #e80080;text-decoration: none;}
+.classify-menu .leval2{background: #f2f2f2;padding: 0;}
+.classify-menu .leval2 li{display: none;}
+.classify-menu .leval2 .active a{background: #ffffff;color: #e80080;text-decoration: none;}
+.classify-menu .leval3{background: #f9f9f9;padding: 0;}
+.classify-menu .leval3 li{display: none;}
+.classify-menu .leval3 .active a{background: #ffffff;color: #e80080;text-decoration: none;}
+
+//商品
+.xcontent{margin-top: 95px;}
+.xcontent .goods{background: #fafafa;padding: 2px;border: solid 1px #f1f5f6;}
+.xcontent  .goods a{margin:3px 10px;display: block;color:black;width:80%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.xcontent  .goods p{margin-left: 10px; color: #df5717;}
+.xcontent  .goods p span{margin-right:5px;color: #df5717;}
+
+//底部
+.footer{position: fixed;bottom: 0;height: 50px;background: white;width: 100%;z-index: 5;border-top:solid #cccccc 2px;}
+.footer nav{display: flex;}
+.footer div{flex: 1;text-align: center;}
+.footer div span{display: block;margin-bottom: 3px;color:#777777;font-size: 20px;}
+.footer div span:nth-child(2n){font-size: 12px;}
+.footer .active span{color:#8e488e;}
