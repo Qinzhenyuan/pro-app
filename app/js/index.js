@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded',function(){
 	autoplay: 3000,//可选选项，自动滑动
 	direction: 'horizontal',
 })
-	
-	
+		
 //	//回到顶部；
-//	$(".hxy-backTop").on("touchstart",function(){
-////		$(document).scrollTop("0");
-//		console.log($(window).scrollTop())
-//	})
+	$(".hxy-backTop").on("singleTap",function(){
+		$("body").scrollTop("0");
+		console.log($(document).scrollTop())
+	})
 	//用ajax获取数据实现加载；
 	$.ajaxSetup({
 		type:'GET',
@@ -45,14 +44,14 @@ document.addEventListener('DOMContentLoaded',function(){
 					$dd.appendTo($dl);
 					$dl.appendTo($(".hxy-project"));
 				}
-				
+				$("img.lazy").lazyload();
 			});
-			$("img.lazy").lazyload();
 		},error:function(xhr,type){
 			alert("Ajax error")
 		}
 	});
 	$.ajax();
+	
 	$(window).on("scroll", function() {
 	var $scrollTop = $(window).scrollTop();
 	if($scrollTop >= $(document).height() - $(window).height() - 100) {
@@ -62,12 +61,3 @@ document.addEventListener('DOMContentLoaded',function(){
 				
 				
 })
-//jQuery(function(){
-//		$("img").lazyload({
-//			effect: 'fadeIn'
-//		});
-//		
-//		$('.hxy-backTop').on("touchstart",function(){
-//			$("body").scrollTop("0");
-//		})
-//})
