@@ -1,0 +1,219 @@
+//默认样式清除
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, button, textarea, p, th, td {
+    margin: 0;
+    padding: 0;
+}
+ul li{list-style: none;}
+a{text-decoration: none;}
+img{border: 0;vertical-align:top;}
+body{font-family: "微软雅黑";color: #777;box-sizing: border-box;line-height: 1.4;}
+html{font-size: 12px;}
+//img{max-width: 100%;}
+//头部
+.hxy-layout-hd{
+    width: 100%;
+    height: 48px;
+    background: #8E488E;
+    position: fixed;
+    top: 0;
+    .hxy-logo{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        a{
+            img{
+                width: 62px;
+                height: 25px;
+            }
+        }
+        .icon-hxy{
+            font-size: 23px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -12px;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+//contianer页面主要内容
+.hxy-container{
+    width: 100%;
+    height: 47rem;
+    position: relative;
+    top: 4rem;
+    overflow-y: scroll;
+    .hxy-carousel{
+        width: 100%;
+        height: auto;
+        li{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    //产品分类
+    .hxy-classify{
+       width: 100%;
+       height: auto;
+       padding-top:0.8rem ;
+       border-bottom: 0.1rem solid #ccc;
+       .hxy-goodslist{
+           width: 100%;
+           height: 10rem;
+           display: flex;
+           flex-wrap: wrap;
+           align-items: center;
+           flex-direction: column;
+           a{
+               flex: 1;
+               color: #777;
+              .hxy-cols-01{
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+               
+                  dt{
+                      img{
+                          width: 3rem;
+                          height: 3rem;
+                      }
+                  }
+              }
+           }
+       }
+    }
+    //专区
+    .hxy-prefecture{
+        width: 100%;
+        height: auto;
+        border-bottom:1px dotted #ccc ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap;
+        .hxy-pre-1{
+            flex: 1;
+            a{
+                img{
+                    width: 100%;
+                    height: 100%;
+                    padding: 0.2rem 0.4rem;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        .hxy-pre-2{
+            padding-bottom: 10px;
+            a{
+                img{
+                    width: 100%;
+                    height: 100%;
+                    padding: 0.2rem 0.4rem;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+    //产品
+    .hxy-project{
+        width: 100%;
+        height: auto;
+        padding: 0px 0.4rem;
+        box-sizing: border-box;
+        .hxy-pro-list{
+            width: 100%;
+            height: auto;
+            border-bottom: 1px dotted #ccc;
+            padding-top:10px;
+            box-sizing: border-box;
+            white-space: nowrap;
+            dt{
+                a{                
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            dd{
+               width: 100%;
+               height: auto;
+               a{
+                   .hxy-pro-intr{
+                       color: #000;
+                       font-size: 1.3rem;
+                   }
+               }
+               a{
+                   .hxy-integral{
+                       color: #131313;
+                       font-size: 1rem;
+                   }
+                   .hxy-pro-price{
+                       color: #934988;
+                       font-size: 1.2rem;
+                       .hxy-unit{
+                           font-style: normal;
+                           font-size: 1rem;
+                       }
+                   }
+               }
+              
+            }
+        }
+    }
+    //回到顶部
+    .hxy-backTop{
+        position: fixed;
+        bottom: 65px;
+        right: 16px;
+        text-align: center;
+        line-height: 55px;
+        display: block;
+        height: 55px;
+        width: 55px;
+        border-radius: 50%;
+        background: rgba(209,43,131,1);
+        .hxy-icon2{
+            font-size: 30px;
+            color: #fff;
+        }
+    }
+}
+//底部
+.hxy-layout-ft{
+    width: 100%;
+    height: 54px;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    .hxy-footer-nav{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+           color: #777;
+           .hxy-icon{
+               font-size: 20px;
+           }
+        }
+    }
+}
+
