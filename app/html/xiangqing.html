@@ -1,222 +1,181 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
+<head>
+<meta charset="UTF-8">
 
-		<meta name="viewport" content="width=device-width initial-scale=1 " />
-		<title>商品详情页</title>
-		<link rel="stylesheet" type="text/css" href="../css/xiangqing.css" />
-		<link rel="stylesheet" href="../font/iconfont.css" />
-		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
-		<script src="../js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+<meta name="viewport" content="width=device-width initial-scale=1 " />
+<title>商品详情页</title>
+<link rel="stylesheet" type="text/css" href="../css/xiangqing.css" />
+<link rel="stylesheet" href="../font/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+<script src="../js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
 
+
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+//商品轮播图
+var mySwiper = new Swiper('.bao .swiper-container', {
+loop: true,
+autoplay: 5000,
+pagination: '.swiper-pagination',
+	paginationClickable: true,
+	spaceBetween: 30,
+});
+//图片延迟加载
+$('img.lazy').lazyload();
+var $news_list = $(".news-list");
+
+$.ajaxSetup({
+	url:"../json/pinglun.json",
+success:function(res){
+	$.each(res, function(idx,ele) {
+		var $div = $("<div/>").addClass("pj").html("<div class='one'><div class='ming'><img src="+ele.imgurl+"    /><span>"+ele.id+"</span></div><div  class='day'>"+ele.ping+"</div></div><span class='xing iconfont icon-xing '>  </span><span class='xing iconfont icon-xing '>  </span><span class='xing iconfont icon-xing' >  </span><span class='xing iconfont icon-xing '>  </span><span class='xing iconfont icon-xing '>  </span><p   class='ping'>"+ele.pinglun+"</p><p class='buy'>"+ele.buy+"</p>");
+			$news_list.append($div);
+		});
 		
+	}
+});
 
-		<script type="text/javascript">
-			document.addEventListener("DOMContentLoaded", function() {
-				//商品轮播图
-				var mySwiper = new Swiper('.bao .swiper-container', {
-					loop: true,
-					autoplay: 5000,
-					pagination: '.swiper-pagination',
-					paginationClickable: true,
-					spaceBetween: 30,
-				});
-				//图片延迟加载
-				$('img.lazy').lazyload();
-				//详情，评论切换
-				var tabsSwiper = new Swiper('#tabs-container', {
-					speed: 500,
-					onSlideChangeStart: function() {
-						$(".tabs .active").removeClass('active')
-						$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
-					}
-				})
-				$(".tabs a").on('touchstart mousedown', function(e) {
-					e.preventDefault()
-					$(".tabs .active").removeClass('active');
-					$(this).addClass('active');
-					tabsSwiper.slideTo($(this).index()-1);
-					console.log($(this).index());
-				})
-				$(".tabs a").click(function(e) {
-					e.preventDefault();
-				})
+      
+		
+		
+		
+$.ajax();
+	$(window).on("scroll",function(){
+	
+	var scroolltop=$(window).scrollTop();
+if(scroolltop>=$(document).height()-$(window).height()-8000){
+	$.ajax();
+	
+}
+				
+});
 
-			})
-		</script>
 
-	</head>
 
-	<body>
 
-		<div class="tabs">
 
-			<!--头部导航-->
-			<header class="xheader">
-			<!--头部菜单-->
-			<div class="xheader_menu">
-				<span class="iconfont icon-fanhui"></span>
-				<a class=" active">商品详情</a>
-				<a class="">评价</a>
-				<span class="iconfont icon-fenlei"></span>
-			</div>
-		</header>
 
-		</div>
-		<div id="tabs-container" class="swiper-container swiper-container-horizontal">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide swiper-slide-active">
-					<div class="content-slide">
-						<ul class="news-list">
+//详情，评论切换
+var tabsSwiper = new Swiper('#tabs-container', {
+speed: 500,
+onSlideChangeStart: function() {
+	$(".tabs .active").removeClass('active')
+$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
+	}
+})
+$(".tabs a").on('touchstart mousedown', function(e) {
+e.preventDefault()
+$(".tabs .active").removeClass('active');
+$(this).addClass('active');
+	tabsSwiper.slideTo($(this).index()-1);
+	console.log($(this).index());
+})
+$(".tabs a").click(function(e) {
+		e.preventDefault();
+	})
 
-							<!--图片轮播-->
-							<div class="bao">
+})
+</script>
 
-								<div class="swiper-container">
+</head>
 
-									<div class="swiper-wrapper tu">
+<body>
 
-										<div class="swiper-slide"><img src="../img/54.jpg" /></div>
-										<div class="swiper-slide"><img src="../img/55.jpg" /></div>
-										<div class="swiper-slide"><img src="../img/56.jpg" /></div>
+<div class="tabs">
 
-									</div>
-									<!--图片按钮 -->
-									<div class="swiper-pagination"></div>
+<!--头部导航-->
+<header class="xheader">
+<!--头部菜单-->
+<div class="xheader_menu">
+<span class="iconfont icon-fanhui"></span>
+<a class=" active">商品详情</a>
+<a class="">评价</a>
+<span class="iconfont icon-fenlei"></span>
+</div>
+</header>
 
-								</div>
+</div>
+<div id="tabs-container" class="swiper-container swiper-container-horizontal">
+<div class="swiper-wrapper">
+<div class="swiper-slide swiper-slide-active">
+<div class="content-slide">
+<ul class="news-list">
 
-								<!--商品信息-->
+<!--图片轮播-->
+<div class="bao">
 
-								<section class="details">
-									<p class="ming">斯文印花黑灰色短袖连衣裙</p>
-									<p style="color: red;">￥120</p>
-									<p><span class="b">品牌名称：</span>LETDIOSTO</p>
-									<p><span class="b">商品名称:</span>女款黑白色条纹上衣套装</p>
-									<p><span class="b">产地：</span>中国</p>
-									<p><span class="b">材质：</span>粘纤77% 聚酯纤维18.5%</p>
-									<p><span class="b">洗涤说明：</span>用水洗谢谢</p>
+<div class="swiper-container">
 
-								</section>
-							</div>
+<div class="swiper-wrapper tu">
 
-							<section class="lazy">
+<div class="swiper-slide"><img src="../img/54.jpg" /></div>
+<div class="swiper-slide"><img src="../img/55.jpg" /></div>
+<div class="swiper-slide"><img src="../img/56.jpg" /></div>
 
-								<img class="lazy" src="../img/loing.gif" data-original="../img/54.jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (1).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (2).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (3).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (4).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (5).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (6).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (7).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (8).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (9).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (10).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (11).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (12).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (13).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (14).jpg" width="100%" heigh="100%">
-								<img class="lazy" src="../img/loing.gif" data-original="../img/tu (15).jpg" width="100%" heigh="100%">
+</div>
+<!--图片按钮 -->
+<div class="swiper-pagination"></div>
 
-							</section>
+</div>
 
-		</ul>
-	</div>
+<!--商品信息-->
+
+<section class="details">
+<p class="ming">斯文印花黑灰色短袖连衣裙</p>
+<p style="color: red;">￥120</p>
+<p><span class="b">品牌名称：</span>LETDIOSTO</p>
+<p><span class="b">商品名称:</span>女款黑白色条纹上衣套装</p>
+<p><span class="b">产地：</span>中国</p>
+<p><span class="b">材质：</span>粘纤77% 聚酯纤维18.5%</p>
+<p><span class="b">洗涤说明：</span>用水洗谢谢</p>
+
+</section>
+</div>
+
+<section class="lazy">
+
+<img class="lazy" src="../img/loging.gif" data-original="../img/54.jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (1).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (2).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (3).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (4).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (5).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (6).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (7).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (8).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (9).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (10).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (11).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (12).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (13).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (14).jpg" width="100%" heigh="100%">
+<img class="lazy" src="../img/loging.gif" data-original="../img/tu (15).jpg" width="100%" heigh="100%">
+
+</section>
+
+</ul>
+</div>
 </div>
 <div class="swiper-slide swiper-slide-next">
-	<div class="content-slide">
-		<ul class="news-list">
-			<section>
-				<div class="pj">
-					<div class="one">
-	
-			<div class="ming">
-			<img src="../img/touxiang.jpg" /><span> 阿狸</span>
-		</div>      
-		
-			<div  class="day">
-		 2016-10-23 13:00
-		</div> 			
-					</div>
+<div class="content-slide">
+<ul class="news-list">
 
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-          <p   class="ping"> 还不错，下次还会再来买</p>
 
-						<p class="buy">购买日期：2016-10-18</p>
 
-								</div>
-								
-								
-								
-								
-									<div class="pj">
-					<div class="one">
-	
-			<div class="ming">
-			<img src="../img/touxiang.jpg" /><span> 阿狸</span>
-		</div>      
-		
-			<div  class="day">
-		 2016-10-23 13:00
-		</div> 			
-					</div>
 
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-          <p   class="ping"> 还不错，下次还会再来买</p>
+</ul>
 
-						<p class="buy">购买日期：2016-10-18</p>
+</div>
+</div>
 
-								</div>
-								
-								
-								
-								
-									<div class="pj">
-					<div class="one">
-	
-			<div class="ming">
-			<img src="../img/touxiang.jpg" /><span> 阿狸</span>
-		</div>      
-		
-			<div  class="day">
-		 2016-10-23 13:00
-		</div> 			
-					</div>
+</div>
+</div>
 
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-					<span class="xing iconfont icon-xing ">  </span>
-          <p   class="ping"> 还不错，下次还会再来买</p>
-
-						<p class="buy">购买日期：2016-10-18</p>
-
-								</div>
-
-							</section>
-
-						</ul>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</body>
+</body>
 
 </html>
