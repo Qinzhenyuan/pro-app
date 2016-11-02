@@ -2,56 +2,45 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/abc_dataPage.css"/>
-		<style type="text/css">
-			/*body,form,label,input,p,datalist,option{margin: 0;padding: 0;}*/
-			*{margin: 0;padding: 0;}
-			form{
-				background-color: white;
-				margin-top: 20px;
-				padding-top: 20px;
-				position: relative;
-			}
-			form label,form input{
-				border: 1px solid #ddd;				
-			}
-			form label{
-			    display: inline-block;
-			    width: 80px;
-			    height: 30px;	
-			    background-color: rgb(238,238,238);		    		    
-			}
-			form .last{
-			    height: 165px;
-			}
-			form input{
-				height: 30px;
-				width: 268px;
-			}
-		</style>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<title>完善资料</title>
+		<link rel="stylesheet" type="text/css" href="../css/dataPage.css"/>
+		<link rel="stylesheet" href="../font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset1.css"/>
+		<script src="../js/jquery-1.12.0.js"></script>
+		<script src="../js/dataPage.js"></script>		
 	</head>
 	<body>
-		<form>
-			<p>
+		<header class="xheader">
+			<!--头部菜单-->
+			<div class="xheader_menu">
+				<span class="iconfont icon-fanhui"></span>
+				<h2>完善资料</h2>
+				<span class="iconfont icon-fenlei"></span>
+			</div>
+		</header>
+		<form class="ziliao">
+			<div>
 				<label for="nickname">用户名</label>
 				<input type="text" id="nickname" name="nickname" autofocus required />
-			</p>
-			<p>
+			</div>
+			<div>
 				<label for="mobile">手机号码</label>
 				<input type="telephone" id="mobile" name="mobile" pattern="1[3578]\d{9}"/>
-			</p>
-			<p>
+			</div>
+			<div>
 				<label class="last" for="shippingAddress">收货地址</label>
-				<input type="text" id="shippingAddress" name="shippingAddress" list="provincelist" placeholder="选择省" />
-				<datalist id="provincelist"></datalist>
-				<input type="text" id="shippingAddress" name="shippingAddress" list="citylist" placeholder="选择市" />
-				<datalist id="citylist"></datalist>
-				<input type="text" id="shippingAddress" name="shippingAddress" list="countylist" placeholder="选择区/县" />
-				<datalist id="countylist"></datalist>
-				<input type="text" value="" placeholder="详细地址" />				
-			</p>
-			<input type="submit" value="提交" />
+				<p class="fourbox">
+					<input type="text" id="shippingAddress" name="shippingAddress" list="provincelist" placeholder="选择省" />
+					<datalist id="provincelist"></datalist>
+					<input type="text" id="shippingAddress" name="shippingAddress" list="citylist" placeholder="选择市" />
+					<datalist id="citylist"></datalist>
+					<input type="text" id="shippingAddress" name="shippingAddress" list="countylist" placeholder="选择区/县" />
+					<datalist id="countylist"></datalist>
+					<textarea class="adress" placeholder="详细地址"></textarea>
+				</p>
+			</div>
+			<input class="submit" type="submit" value="提交" />
 		</form>
 	</body>
 </html>

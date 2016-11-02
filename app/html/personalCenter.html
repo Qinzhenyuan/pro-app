@@ -2,14 +2,27 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/abc_personalCenter.css"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<title>个人中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/personalCenter.css"/>
+		<link rel="stylesheet" href="../font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset1.css"/>
+		<script src="../js/jquery-1.12.0.js"></script>
+		<script src="../js/personalCenter.js"></script>
 	</head>
 	<body>
+		<header class="xheader">
+			<!--头部菜单-->
+			<div class="xheader_menu">
+				<span class="iconfont icon-fanhui"></span>
+				<h2>个人中心</h2>
+				<span class="iconfont icon-fenlei"></span>
+			</div>
+		</header>
 		<!--头像栏-->
-		<section>
+		<section class="first">
 			<div class="leftimg">
-				<a class="touxiang" href="#"><img src="../img/18.jpg"/></a>
+				<a class="touxiang" href="dataPage.html"><img src="../img/18.jpg"/></a>
 				<div>
 					<h3>1234567890</h3>
 					<a href="#"><img src="../img/18.jpg"/></a><span>普通会员</span>				
@@ -33,7 +46,7 @@
 		</section>
 		
 		<!--会员等级栏-->
-		<section>
+		<section class="second">
 			<a href="#">
 				<img src="../img/abc-1.jpg"/>
 				<p>一级会员</p>
@@ -55,8 +68,8 @@
 		</section>
 		
 		<!--我的订单、升级为商家、完善资料栏-->
-		<section>
-			<a href="#">
+		<section class="three">
+			<a href="indentPage.html">
 				<img src="../img/abc-4.jpg"/>
 				<p>我的订单</p>
 				<span>></span>
@@ -66,7 +79,7 @@
 				<p>升级为商家</p>
 				<span>></span>
 			</a>
-			<a href="#">
+			<a href="dataPage.html">
 				<img src="../img/abc-6.jpg"/>
 				<p>完善资料栏</p>
 				<span>></span>
