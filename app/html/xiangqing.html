@@ -13,28 +13,7 @@
 		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
 
-		<style type="text/css">
-			.tabs {
-				background-size: auto 100%;
-				width: 100%;
-				overflow: hidden;
-			}
-			
-			.tabs a.active {
-				background: white;
-				padding: 10px 0 5px 0;
-				color: #c14545;
-			}
-			.news-list{
-				padding: 0;
-			}
-			
-			.news-list li {
-				list-style: none;
-				
-				font-size: 1em;
-			}
-		</style>
+		
 
 		<script type="text/javascript">
 			document.addEventListener("DOMContentLoaded", function() {
@@ -58,12 +37,13 @@
 				})
 				$(".tabs a").on('touchstart mousedown', function(e) {
 					e.preventDefault()
-					$(".tabs .active").removeClass('active')
-					$(this).addClass('active')
-					tabsSwiper.slideTo($(this).index())
+					$(".tabs .active").removeClass('active');
+					$(this).addClass('active');
+					tabsSwiper.slideTo($(this).index()-1);
+					console.log($(this).index());
 				})
 				$(".tabs a").click(function(e) {
-					e.preventDefault()
+					e.preventDefault();
 				})
 
 			})
@@ -76,17 +56,15 @@
 		<div class="tabs">
 
 			<!--头部导航-->
-			<header class="header">
-
-				<nav class="nav">
-					<!--<span class="iconfont icon-fanhui"></span>-->
-					<a href="#" class="xiangqing  active">详情</a>
-
-					<a href="#" class="pinglun">评论</a>
-					<span class="iconfont icon-xing"></span>
-
-				</nav>
-			</header>
+			<header class="xheader">
+			<!--头部菜单-->
+			<div class="xheader_menu">
+				<span class="iconfont icon-fanhui"></span>
+				<a class=" active">商品详情</a>
+				<a class="">评价</a>
+				<span class="iconfont icon-fenlei"></span>
+			</div>
+		</header>
 
 		</div>
 		<div id="tabs-container" class="swiper-container swiper-container-horizontal">
@@ -114,14 +92,14 @@
 
 								<!--商品信息-->
 
-								<section>
+								<section class="details">
 									<p class="ming">斯文印花黑灰色短袖连衣裙</p>
 									<p style="color: red;">￥120</p>
-									<p>品牌名称：LETDIOSTO</p>
-									<p>商品名称：女款黑白色条纹上衣套装</p>
-									<p>产地：中国</p>
-									<p>材质：上衣：粘纤77% 聚酯纤维18.5%</p>
-									<p>洗涤说明：用水洗谢谢</p>
+									<p><span class="b">品牌名称：</span>LETDIOSTO</p>
+									<p><span class="b">商品名称:</span>女款黑白色条纹上衣套装</p>
+									<p><span class="b">产地：</span>中国</p>
+									<p><span class="b">材质：</span>粘纤77% 聚酯纤维18.5%</p>
+									<p><span class="b">洗涤说明：</span>用水洗谢谢</p>
 
 								</section>
 							</div>
