@@ -1,27 +1,46 @@
-
+;(function(){
 document.addEventListener('DOMContentLoaded',function(){
 	//swiper 轮播图
 	var mySwiper = new Swiper('.swiper-container', {
 	autoplay: 3000,//可选选项，自动滑动
 	direction: 'horizontal',
-})
-		
-//	//回到顶部；
-	$(".hxy-backTop").on("singleTap",function(){
-		$("body").scrollTop("0");
-		console.log($(document).scrollTop())
 	})
+
+});
+$(function(){
+	
+	//每次加载的数量；
+	var proNum = 5;
+	//加载的索引
+	var index = -1;
+	//ajax加载 先加载5个；
+//	$.ajax();
+	
+	$(".hxy-container").scroll(function(){
+		//回到顶部；
+		$(".hxy-backTop").on("click",function(){
+			$(".hxy-container").scrollTop(0);
+		})
+		var $ctTop = $(this).scrollTop();
+
+		var $proHeight = $(".hxy-pro-list").height();
+		if($ctTop == $proHeight*5){
+			proNum += 16;
+			$.ajax();
+		}
+	})
+		$("img").lazyload({
+			effect:'fadeIn'
+		});
 	//用ajax获取数据实现加载；
 	$.ajaxSetup({
-		type:'GET',
 		url:"data/indexpro.json",
 		dataType:"json",
-		timeout:300,
 		success:function(data){
 			console.log(data);
 			$.each(data, function(idx,item) {
 				//先加载部分；
-				if(idx<5){
+				if(idx < proNum){
 					//创建标签，并添加hxy-project
 					var $dl = $("<dl/>").addClass("hxy-pro-list");
 					var $dt = $("<dt/>");
@@ -30,8 +49,8 @@ document.addEventListener('DOMContentLoaded',function(){
 					var $a2 = $("<a/>").attr({href:item.href});
 					var $a3 = $("<a/>").attr({href:item.href})
 					//创建储产品图片；
-					$("<img src='img/loading.gif' data-original="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
-//					$("<img src="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
+//					$("<img src='img/loading.gif' data-original="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
+					$("<img src="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
 					//产品价格和产品说明；
 					$("<p/>").addClass("hxy-pro-intr").html(item.title).appendTo($a2);
 					$("<span/>").addClass("hxy-integral").html(item.proPri).appendTo($a3);
@@ -44,20 +63,21 @@ document.addEventListener('DOMContentLoaded',function(){
 					$dd.appendTo($dl);
 					$dl.appendTo($(".hxy-project"));
 				}
-				$("img.lazy").lazyload();
-			});
+			})		
 		},error:function(xhr,type){
 			alert("Ajax error")
 		}
 	});
-	$.ajax();
+
 	
-	$(window).on("scroll", function() {
-	var $scrollTop = $(window).scrollTop();
-	if($scrollTop >= $(document).height() - $(window).height() - 100) {
-		$.ajax();
-		}
-	});
-				
-				
-})
+	
+//	$(".hxy-container").scroll(function() {
+//	var $scrollTop = $(window).scrollTop();
+//	console.log($scrollTop);
+//	if($scrollTop >= $(document).height() - $(window).height() - 100) {
+//		$.ajax();
+//		}
+//	});
+});
+
+})();
