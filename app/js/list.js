@@ -50,9 +50,30 @@
 			var da_name = $(this).attr("data-name");
 			//当点击的是全部分类的时候
 			if(da_name == "all"){
-				//分类菜单隐藏
+				//先隐藏二级三级菜单
+				$leval2.css("display","none");
+				$leval3.css("display","none");
+				//把头部菜单的文字替换
+				$classify.find("b").html("分类");
+				//移除头部菜单的激活类
+				//箭头翻转
+				$classify.find(".iconfont").toggleClass("active");
+				//字变色
+				$classify.toggleClass("active2");
+				//添加激活类 其他移除
+				$(this).addClass("active").siblings("li").removeClass("active");
+				//移除激活类 关闭菜单
 				$classify_menu.removeClass("active3");
+				//先清空
+				$xcontent.html("");
+				//初始化索引
+				index = -1;
+				//调用加载函数
+				ajaxJz();
 			}else{
+				//隐藏三级菜单
+				$leval3.css("display","none");
+				//添加激活类 其他移除
 				$(this).addClass("active").siblings("li").removeClass("active");
 				var $l2 = $(".classify-menu .leval2");
 				$l2.find("."+da_name+"").siblings("li").css("display","none");
@@ -61,23 +82,47 @@
 			
 			//点击二级分类
 			$leval2.singleTap(function(){
+				//添加激活类 其他移除
 				$(this).addClass("active").siblings("li").removeClass("active");
-				if(da_name == "muying"){
-					//没有三级菜单
-//					$classify_menu.removeClass("active3");
-				}else{
-					var $l3 = $(".classify-menu .leval3");
-					var da_name2 = $(this).attr("data-name");
-					$l3.find("."+da_name2+"").siblings("li").css("display","none");
-					$l3.find("."+da_name2+"").css("display","block");
-				}
+				var $l3 = $(".classify-menu .leval3");
+				var da_name2 = $(this).attr("data-name");
+				$l3.find("."+da_name2+"").siblings("li").css("display","none");
+				$l3.find("."+da_name2+"").css("display","block");
 				
 			});
 			
-			//点击三级分类
-			$leval3.singleTap(function(){
-				$(this).addClass("active").siblings("li").removeClass("active");
+		});
+		
+		//点击三级分类
+		$leval3.singleTap(function(){
+			//添加激活类 其他移除
+			$(this).addClass("active").siblings("li").removeClass("active");
+			//移除头部菜单的激活类
+			//箭头翻转
+			$classify.find(".iconfont").removeClass("active");
+			//字变色
+			$classify.removeClass("active2");
+			//移除激活类 关闭菜单
+			$classify_menu.removeClass("active3");
+			//获取  自身的html 即分类
+			var $fl_html = $(this).children().html();
+			//把头部菜单的文字替换
+			$classify.find("b").html($fl_html);
+			//先清空
+			$xcontent.html("");
+			//加载
+			$.ajax({
+				url:"../json/list.json",
+				success:function(res){
+					$.each(res, function(idx,ele) {
+						if(ele.category == $fl_html){
+							var $div = $("<div/>").addClass("goods col-xs-6 "+ele.code+"").html("<fieldset><img src="+ele.imgUrl+" class='col-xs-12'/><figcaption><a href='#'>"+ele.title+"</a></figcaption><p><span class='iconfont icon-jifen'></span>"+ele.price+"</p></fieldset>")
+							$div.appendTo($xcontent);
+						}
+					});
+				}
 			});
+			
 		});
 		
 		//单击头部品牌时
@@ -114,8 +159,5 @@
 				}
 			});
 		}
-		
-		
-		
 	});
 })();

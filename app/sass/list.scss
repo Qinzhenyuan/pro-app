@@ -8,6 +8,7 @@
 //头部筛选
 .xheader .xheader_screen{background: #f1f5f6;height: 50px;}
 .xheader .xheader_screen h3{text-align: center;height: 20px;font-size: 12px;}
+.xheader .xheader_screen b{font-weight: 100;}
 .xheader .xheader_screen h3:last-child{border-left:solid #000 1px ;}
 .xheader .xheader_screen span{display: inline-block;margin-left: 5px;-webkit-transition: -webkit-transform 1s;}
 .xheader .xheader_screen .active{-webkit-transform: rotateX(180deg);color:#8e488e ;}
@@ -24,7 +25,7 @@
 .classify-menu .leval2 .active a{background: #ffffff;color: #e80080;text-decoration: none;}
 .classify-menu .leval3{background: #f9f9f9;padding: 0;}
 .classify-menu .leval3 li{display: none;}
-.classify-menu .leval2 .active a{background: #ffffff;color: #e80080;text-decoration: none;}
+.classify-menu .leval3 .active a{background: #ffffff;color: #e80080;text-decoration: none;}
 
 //商品
 .xcontent{margin-top: 95px;}
