@@ -18,13 +18,19 @@ document.addEventListener("DOMContentLoaded",function(){
 	$.ajax();
 		
 //	实现懒加载部分
+	var i = 0;
 	$(window).on('scroll',function(){
 		// 获取滚动条滚动过的距离
 		var scrollTop = $(window).scrollTop();
-
+		
 		// 当差不多滚动到底部时加载更多内容
-		if(scrollTop >= $(document).height() - $(window).height() - 100){
-			$.ajax();
+		if(scrollTop >= $(document).height() - $(window).height() - 100){					
+			if(i<=3){
+				$.ajax();
+			}else{
+				return false;
+			}
+			i++;
 		}
 	});
 });
