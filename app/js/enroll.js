@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded",function(){
 				if(flag2 == true){
 					if(flag3 == true){
 
-						if(flag4 == true){
+					
 							localStorage.setItem('wordList',JSON.stringify(wordList));
 							alert("地球人，您已经越过太阳系，快去登录吧！");
 							setTimeout(window.open("register.html"),1000);
-						}
+						
 
 					}
 				}
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded",function(){
 	var flag1 = false;//标记用户；
 	var flag2 = false;//标记密码；
 	var flag3 = false;//标记重写密码；
-	var flag4 = false;//标记推荐人帐号；
+	
 	//用户名验证；
 	oinput[0].onblur = function(){
 		registernNameTake();
@@ -54,10 +54,7 @@ document.addEventListener("DOMContentLoaded",function(){
 	oinput[3].onblur = function(){
 		registerPswAgTake();
 	}
-	//推荐人验证；
-	oinput[4].onblur = function(){
-		registerTjrTake();
-	}
+
 //账户手机号码验证
 function registernNameTake() {
 		var _this = oinput[0];
