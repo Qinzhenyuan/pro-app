@@ -10,7 +10,7 @@ a {
   align-items: center;
   width: 100%; }
 
-.xheader .xheader_menu a {
+.xheader .xheader_menu h2 {
   font-size: 16px;
   text-align: center;
   display: inline-block;
@@ -72,6 +72,46 @@ a {
   margin: 5px 0;
   color: red; }
 
-.pj .day, .buy {
+.pj .day,
+.buy {
   color: darkgray;
   font-size: 0.9em; }
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  border-top: solid #8e488e 1px;
+  display: flex;
+  text-align: center; }
+  .footer .total1 {
+    flex: 1;
+    background: white;
+    padding: 10px 0;
+    position: relative; }
+    .footer .total1 .shu {
+      display: block;
+      background: red;
+      border-radius: 50%;
+      width: 1.5em;
+      height: 1.5em;
+      color: white;
+      position: absolute;
+      top: 10px;
+      left: 80px;
+      text-align: center; }
+    .footer .total1 .iconfont {
+      font-size: 30px; }
+  .footer .total2 {
+    flex: 1;
+    background: fuchsia;
+    padding: 10px 0;
+    color: white; }
+  .footer .total3 {
+    flex: 1;
+    background: firebrick;
+    padding: 10px 0;
+    color: white; }

@@ -59,7 +59,9 @@ html{font-size: 12px;}
                 height: 100%;
             }
         }
-    }
+    }  
+    
+    
     //产品分类
     .hxy-classify{
        width: 100%;
@@ -73,6 +75,10 @@ html{font-size: 12px;}
            flex-wrap: wrap;
            align-items: center;
            flex-direction: column;
+            div{
+     display: flex;
+      width: 100%;
+   
            a{
                flex: 1;
                color: #777;
@@ -89,6 +95,7 @@ html{font-size: 12px;}
                   }
               }
            }
+        }
        }
     }
     //专区

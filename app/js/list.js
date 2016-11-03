@@ -7,8 +7,7 @@
 		var index = -1;
 		//ajax加载    先加载8个
 		ajaxJz();
-		//获取回到顶部上箭头
-		var $top = $("#top");
+		
 		//当滚动滚动条时
 		$(window).scroll(function(){
 			//滚动条到顶部的距离
@@ -25,18 +24,8 @@
 				ajaxJz();
 			}
 			
-			//当滚动条距离顶部距离大于可视区域的高度时
-			if(iTop > vheight){
-				$top.css("display","flex");
-			}else{
-				$top.css("display","none");
-			}
 		});
 		
-		//点击回到顶部按钮时
-		$top.singleTap(function(){
-			 $(window).scrollTop(0);
-		});
 		//头部分类
 		var $classify = $("#classify");
 		//头部品牌
@@ -154,6 +143,10 @@
 			$(this).addClass("active").siblings("div").removeClass("active");
 		});
 		
+		//先获取本地存储
+		var datalist = localStorage.getItem('datalist');
+		//如果没有则返回空数组
+		datalist = datalist ? JSON.parse(datalist) : [];
 		
 		//点击图片添加商品信息到本地存储
 		//事件委托
@@ -170,18 +163,33 @@
 			var $num =  1;
 			//console.log($price+","+$code+","+$imgUrl+","+$title);
 			
-			//设置本地存储
-			var obj = {};
-			obj.title = $title; //商品名称
-			obj.code = $code; //商品编号
-			obj.imgUrl = $imgUrl; // 商品图片路径
-			obj.price = $price;  // 商品价格
+			//本地存储
+			var flag = false; //用于判断数组中是否已存在该商品
+			datalist.forEach(function(ele,idx){
+				//如果有相等的 则已存在
+				if(ele.code == $code){
+					flag = true;
+					//已存在该商品  在原来数量上加一
+					ele.num += 1; 
+				}
+			});
 			
-			//储存
-			localStorage.setItem("goods",obj);
+			//如果数组不存在该商品,则保存该商品信息
+			if(!flag){
+				//用对象存储当前信息
+				var obj = {};
+				obj.title = $title; //商品名称
+				obj.code = $code; //商品编号
+				obj.imgUrl = $imgUrl; // 商品图片路径
+				obj.price = $price;  // 商品价格
+				obj.num = $num; //商品数量
+				// 把当前单词写入数组
+				datalist.push(obj);
+			}
 			
-			//跳转到详情页
-			location.href = "xiangqing.html";
+			// 保存到本地存储
+			localStorage.setItem('datalist',JSON.stringify(datalist));
+			console.log(datalist);
 			
 		});
 		 

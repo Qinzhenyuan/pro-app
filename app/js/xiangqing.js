@@ -47,17 +47,17 @@ var tabsSwiper = new Swiper('#tabs-container', {
 speed: 500,
 onSlideChangeStart: function() {
 	$(".tabs .active").removeClass('active')
-$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
+$(".tabs h2").eq(tabsSwiper.activeIndex).addClass('active')
 	}
 })
-$(".tabs a").on('touchstart mousedown', function(e) {
+$(".tabs h2").on('touchstart mousedown', function(e) {
 e.preventDefault()
 $(".tabs .active").removeClass('active');
 $(this).addClass('active');
 	tabsSwiper.slideTo($(this).index()-1);
 	console.log($(this).index());
 })
-$(".tabs a").click(function(e) {
+$(".tabs h2").click(function(e) {
 		e.preventDefault();
 	})
 

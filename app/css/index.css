@@ -74,16 +74,19 @@ html {
       flex-wrap: wrap;
       align-items: center;
       flex-direction: column; }
-      .hxy-container .hxy-classify .hxy-goodslist a {
-        flex: 1;
-        color: #777; }
-        .hxy-container .hxy-classify .hxy-goodslist a .hxy-cols-01 {
-          display: flex;
-          flex-direction: column;
-          align-items: center; }
-          .hxy-container .hxy-classify .hxy-goodslist a .hxy-cols-01 dt img {
-            width: 3rem;
-            height: 3rem; }
+      .hxy-container .hxy-classify .hxy-goodslist div {
+        display: flex;
+        width: 100%; }
+        .hxy-container .hxy-classify .hxy-goodslist div a {
+          flex: 1;
+          color: #777; }
+          .hxy-container .hxy-classify .hxy-goodslist div a .hxy-cols-01 {
+            display: flex;
+            flex-direction: column;
+            align-items: center; }
+            .hxy-container .hxy-classify .hxy-goodslist div a .hxy-cols-01 dt img {
+              width: 3rem;
+              height: 3rem; }
   .hxy-container .hxy-prefecture {
     width: 100%;
     height: auto;
