@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		dataType : "json",
 		success : function(res){
 			$.each(res.regions, function(idx,item) {
+				if()
 				$("<option/>").html(item.name).attr({value:item.name}).appendTo(provincelist[0]);
 				$.each(item.regions, function(idx,item) {
 					$("<option/>").html(item.name).attr({value:item.name}).appendTo(provincelist[1]);
