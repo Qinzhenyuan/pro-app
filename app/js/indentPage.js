@@ -2,6 +2,7 @@
 	document.addEventListener("DOMContentLoaded",function(){
 		var content = document.querySelector(".content");
 		
+
 		var cookies = JSON.parse(localStorage.getItem("datalist"));
 		
 //		$.each(cookies, function(res) {
@@ -20,5 +21,6 @@
 			$("<li/>").append($("<span/>").addClass("anniu").append($("<button/>").html("付款")).append($("<button/>").html("删除订单")).append($("<button/>").html("查看物流"))).appendTo($ul);			
 			$ul.appendTo(content);
 		}
+
 	});
 })();

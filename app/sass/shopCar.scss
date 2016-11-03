@@ -1,16 +1,17 @@
 //头部菜单
 .xheader{position: fixed;top: 0;width: 100%;z-index: 5;}
 .xheader .xheader_menu{background: #8e488e;color: white;height: 40px;display: flex;align-items: center;width: 100%;}
-.xheader .xheader_menu h2{font-size:16px;text-align: center;display: inline-block;flex: 1;padding: 0;margin: 0;}
-.xheader .xheader_menu span{font-size:20px;display: inline-block;margin: 0 10px;flex: 1;}
-.xheader .xheader_menu span:last-child{text-align: right;}
+.xheader .xheader_menu h2{font-size:16px;display: flex;justify-content: center;flex: 1;padding: 0;margin: 0;}
+.xheader .xheader_menu span{font-size:20px;display:flex;margin: 0 10px;flex: 1;justify-content: flex-end;}
+.xheader .xheader_menu a{flex: 1;color: white;margin: 0 10px;}
 
 //内容
 .xcontent{margin-top: 40px;display: flex;flex-wrap: wrap;}
 .xcontent .goods{display: flex;width: 100%;border-bottom: dotted #ccc 1px;padding: 10px 5px;}
 .xcontent .part1{flex: 1;display: flex;align-items: center;justify-content: center;}
 .xcontent .part1 img{margin-left: 10px;width: 70%;border-radius:5px ;}
-.xcontent .part1 span{font-size: 20px;color: #e5e5e5;}
+.xcontent .part1 span{font-size: 22px;color: #e5e5e5;}
+.xcontent .part1 .active{color:#8e488e;}
 .xcontent .part2{flex: 2;padding: 0 10px;}
 .xcontent .part2 p{color: #f00080;padding-left: 10px;}
 .xcontent .part2 .shuliang{display:flex;justify-content: flex-end;}
@@ -19,10 +20,16 @@
 .xcontent  .part2 .shuliang span:nth-of-type(2){border: solid #ccc 1px;border-width:1px 0;}
 .xcontent  .part2 .shuliang span:nth-of-type(3){border: solid #ccc 1px;border-bottom-right-radius:7px;border-top-right-radius:7px;}
 
+.caidan {display: none;z-index: 3;background-color: #111;opacity: 0.7;position: fixed;right: 10px;top: 40px;}
+.caidan::before {content: "";width: 0; height: 0;border: 10px solid transparent;border-bottom-color: #111;position: absolute;right: 10px;top: -20px;}
+.caidan li {width: 120px;height: 34px;border-bottom: 1px solid #122B40;line-height: 34px;text-align: center;}
+.caidan li a {color: white;display: block;width: 120px;height: 34px;}
+
 //底部
 .footer{position: fixed; bottom: 0;width: 100%;z-index: 5;border-top: solid #8e488e 1px;display: flex;}
 .footer .checkbox{flex: 1;display: flex;justify-content: center;align-items: center;background: white;margin: 0;height: 50px;}
 .footer .checkbox p{margin-bottom: 0;font-size: 14px;}
-.footer .checkbox span{margin-right: 5px;font-size: 16px;color: #e5e5e5;}
-.footer .total{flex: 3;background:#8e488e;display: flex;justify-content: center;align-items: center;}
+.footer .checkbox span{margin-right: 5px;font-size: 22px;color: #e5e5e5;}
+.footer .checkbox .active{color:#8e488e;}
+.footer .total{flex: 2;background:#8e488e;display: flex;justify-content: center;align-items: center;}
 .footer .total p{margin-bottom: 0;color: white;font-size: 14px;}

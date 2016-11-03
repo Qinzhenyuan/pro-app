@@ -1,9 +1,9 @@
 //头部菜单
 .xheader{position: fixed;top: 0;width: 100%;z-index: 5;}
 .xheader .xheader_menu{background: #8e488e;color: white;height: 40px;display: flex;align-items: center;width: 100%;}
-.xheader .xheader_menu h2{font-size:16px;text-align: center;display: inline-block;flex: 1;padding: 0;margin: 0;}
-.xheader .xheader_menu span{font-size:20px;display: inline-block;margin: 0 10px;flex: 1;}
-.xheader .xheader_menu span:last-child{text-align: right;}
+.xheader .xheader_menu h2{font-size:16px;display: flex;justify-content: center;flex: 1;padding: 0;margin: 0;}
+.xheader .xheader_menu span{font-size:20px;display:flex;margin: 0 10px;flex: 1;justify-content: flex-end;}
+.xheader .xheader_menu a{flex: 1;color: white;margin: 0 10px;}
 
 //头部筛选
 .xheader .xheader_screen{background: #f1f5f6;height: 50px;}
@@ -34,11 +34,13 @@
 .xcontent  .goods p{margin-left: 10px; color: #df5717;}
 .xcontent  .goods p span{margin-right:5px;color: #df5717;}
 
+//回到顶部箭头
+#top{position: fixed;right: 10px;display: none;height:30px;width:30px;z-index: 5;bottom: 80px;background: #f8b9dc;border-radius:50%;justify-content: center;align-items: center;color: white;}
 
 
 
 //底部
-.footer{position: fixed;bottom: 0;height: 50px;background: white;width: 100%;z-index: 5;border-top:solid #cccccc 2px;}
+.footer{position: fixed;bottom: 0;height: 50px;background: white;width: 100%;z-index: 5;border-top:solid #cccccc 2px;padding-top: 3px;}
 .footer nav{display: flex;}
 .footer div{flex: 1;text-align: center;}
 .footer div span{display: block;margin-bottom: 3px;color:#777777;font-size: 20px;}

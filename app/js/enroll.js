@@ -25,11 +25,13 @@ document.addEventListener("DOMContentLoaded",function(){
 			if(flag1 == true){
 				if(flag2 == true){
 					if(flag3 == true){
+
 						if(flag4 == true){
 							localStorage.setItem('wordList',JSON.stringify(wordList));
 							alert("地球人，您已经越过太阳系，快去登录吧！");
 							setTimeout(window.open("register.html"),1000);
 						}
+
 					}
 				}
 			}
@@ -108,21 +110,10 @@ function registerPswAgTake(){
 			tishi.innerHTML = "请正确匹配密码";
 		}
 };
-//推荐人帐号；
-function registerTjrTake(){
-			var _this = oinput[4];
-		var name = oinput[4].value;
-		
-		if(name == ''){
-			_this.style.borderColor = "#f20266";
-			return true;
-		}else if(/^[1][358][0-9]{9}$/.test(name)){
-			_this.style.borderColor = "#ccc";
-			flag4 = true;
-			return false;
-		}
-}
 
 
-})
+
+
+
+
 })();

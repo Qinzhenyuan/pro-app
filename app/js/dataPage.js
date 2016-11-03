@@ -3,6 +3,7 @@
 		var provincelist = document.querySelectorAll("datalist");
 		var city = document.querySelectorAll(".shippingAddress");
 		
+
 		city[0].onfocus = function(){
 			$.ajax({
 				url:"../json/region.json",
@@ -19,7 +20,7 @@
 				$.ajax({
 					url:"../json/region.json",
 					dataType : "json",
-					success : function(res){
+					success : function(res){						
 						$.each(res.regions, function(idx,item) {
 							if(city[0].value == item.name){
 								$.each(item.regions, function(idx,item) {
@@ -50,5 +51,6 @@
 				});
 			}
 		}
+
 	});
 })();
