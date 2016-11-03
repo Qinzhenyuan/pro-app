@@ -1,4 +1,38 @@
+
+
+;(function(){	
+	
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
+	
+	
+	
+	
+	
+	//生成商品详细
+  var data = JSON.parse(localStorage.getItem("goods"));
+       console.log(data.title);
+
+
+//内容生成
+
+		var $ming=$(".ming");
+		var $jg=$(".jg");
+//		
+		$ming.html(data.title);
+		$jg.html("￥"+data.price);
+           var $qcontent = $(".tu div:first").find("img");
+
+
+	$qcontent.attr("src",data.imgUrl);
+	
+	
+	 
+
+	
+	
 //商品轮播图
 var mySwiper = new Swiper('.bao .swiper-container', {
 loop: true,
@@ -7,6 +41,15 @@ pagination: '.swiper-pagination',
 	paginationClickable: true,
 	spaceBetween: 30,
 });
+
+
+
+
+
+
+
+
+
 //图片延迟加载
 $('img.lazy').lazyload();
 var $news_list = $(".news-list");
@@ -56,9 +99,11 @@ $(".tabs .active").removeClass('active');
 $(this).addClass('active');
 	tabsSwiper.slideTo($(this).index()-1);
 	console.log($(this).index());
-})
+});
 $(".tabs h2").click(function(e) {
 		e.preventDefault();
-	})
+});
 
-})
+});
+
+})();

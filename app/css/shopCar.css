@@ -14,8 +14,8 @@
 
 .xheader .xheader_menu h2 {
   font-size: 16px;
-  text-align: center;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   flex: 1;
   padding: 0;
   margin: 0; }
@@ -52,8 +52,11 @@
   border-radius: 5px; }
 
 .xcontent .part1 span {
-  font-size: 20px;
+  font-size: 22px;
   color: #e5e5e5; }
+
+.xcontent .part1 .active {
+  color: #8e488e; }
 
 .xcontent .part2 {
   flex: 2;
@@ -111,8 +114,11 @@
 
 .footer .checkbox span {
   margin-right: 5px;
-  font-size: 16px;
+  font-size: 22px;
   color: #e5e5e5; }
+
+.footer .checkbox .active {
+  color: #8e488e; }
 
 .footer .total {
   flex: 3;

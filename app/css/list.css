@@ -14,8 +14,8 @@
 
 .xheader .xheader_menu h2 {
   font-size: 16px;
-  text-align: center;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   flex: 1;
   padding: 0;
   margin: 0; }
@@ -130,6 +130,20 @@
   margin-right: 5px;
   color: #df5717; }
 
+#top {
+  position: fixed;
+  right: 10px;
+  display: none;
+  height: 30px;
+  width: 30px;
+  z-index: 5;
+  bottom: 80px;
+  background: #f8b9dc;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: white; }
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -137,7 +151,8 @@
   background: white;
   width: 100%;
   z-index: 5;
-  border-top: solid #cccccc 2px; }
+  border-top: solid #cccccc 2px;
+  padding-top: 3px; }
 
 .footer nav {
   display: flex; }

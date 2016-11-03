@@ -1,27 +1,100 @@
+.xheader .xheader_menu {
+	background: #8e488e;
+	color: white;
+	align-items: center;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	width: 100%
+}
+
+.xheader .xheader_menu h2 {
+	font-size: 16px;
+	text-align: center;
+	display: inline-block;
+	flex: 1;
+	padding: 0;
+
+	margin: 0
+}
+
+.xheader .xheader_menu span {
+	font-size: 20px;
+	display: inline-block;
+	margin: 0 10px
+}
+
+.xheader .xheader_menu span:last-child {
+	text-align: right
+}
+
+
+ .caidan {
+	display: none;
+	z-index: 3;
+	background-color: #111;
+	opacity: 0.7;
+	position: fixed;
+	right: 10px;
+	top: 40px
+}
+
+ .caidan::before {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color: #111;
+	position: absolute;
+	right: 10px;
+	top: -20px
+}
+
+ .caidan li {
+	width: 120px;
+	height: 34px;
+	border-bottom: 1px solid #122B40;
+	line-height: 34px;
+	text-align: center
+}
+
+ .caidan li a {
+	color: white;
+	display: block;
+	width: 120px;
+	height: 34px
+}
+
 .footer {
-  position: fixed;
-  bottom: 0;
-  height: 50px;
-  background: white;
-  width: 100%;
-  z-index: 5;
-  border-top: solid #cccccc 2px; }
+	position: fixed;
+	bottom: 0;
+	height: 50px;
+	background: white;
+	width: 100%;
+	z-index: 5;
+	border-top: solid #cccccc 2px
+}
 
 .footer nav {
-  display: flex; }
+	display: flex
+}
 
 .footer div {
-  flex: 1;
-  text-align: center; }
+	flex: 1;
+	text-align: center
+}
 
 .footer div span {
-  display: block;
-  margin-bottom: 3px;
-  color: #777777;
-  font-size: 20px; }
+	display: block;
+	margin-bottom: 3px;
+	color: #777777;
+	font-size: 20px
+}
 
 .footer div span:nth-child(2) {
-  font-size: 12px; }
+	font-size: 12px
+}
 
 .footer .active span {
-  color: #8e488e; }
+	color: #8e488e
+}

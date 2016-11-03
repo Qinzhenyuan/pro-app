@@ -1,32 +1,69 @@
-a {
-  text-decoration: none; }
-
 .xheader .xheader_menu {
-  background: #8e488e;
-  color: white;
-  align-items: center;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  width: 100%; }
+	background: #8e488e;
+	color: white;
+	align-items: center;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	width: 100%
+}
 
 .xheader .xheader_menu h2 {
-  font-size: 16px;
-  text-align: center;
-  display: inline-block;
-  flex: 1;
-  padding: 10px 0;
-  margin: 0;
-  transition: all 0.5s; }
+	font-size: 16px;
+	text-align: center;
+	display: inline-block;
+	flex: 1;
+	padding: 5px 0;
+
+	margin: 0
+}
 
 .xheader .xheader_menu span {
-  font-size: 20px;
-  display: inline-block;
-  margin: 0 5px; }
+	font-size: 20px;
+	display: inline-block;
+	margin: 0 10px
+}
 
 .xheader .xheader_menu span:last-child {
-  text-align: right; }
+	text-align: right
+}
 
+
+ .caidan {
+	display: none;
+	z-index: 3;
+	background-color: #111;
+	opacity: 0.7;
+	position: fixed;
+	right: 10px;
+	top: 40px
+}
+
+ .caidan::before {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color: #111;
+	position: absolute;
+	right: 10px;
+	top: -20px
+}
+
+ .caidan li {
+	width: 120px;
+	height: 34px;
+	border-bottom: 1px solid #122B40;
+	line-height: 34px;
+	text-align: center
+}
+
+ .caidan li a {
+	color: white;
+	display: block;
+	width: 120px;
+	height: 34px
+}
 .active {
   background: white;
   color: black; }
@@ -46,6 +83,10 @@ a {
 .tu {
   text-align: center; }
 
+.tu img {
+  width: 70%;
+  height: 300px; }
+
 .details p {
   color: gray;
   font-size: 1em; }
@@ -53,6 +94,9 @@ a {
 .details .b {
   color: black;
   font-size: 1.2em; }
+
+.details .jg {
+  color: red; }
 
 .pj {
   border-bottom: 8px solid darkgray; }
@@ -94,7 +138,7 @@ a {
     position: relative; }
     .footer .total1 .shu {
       display: block;
-      background: red;
+      background: #8e488e;
       border-radius: 50%;
       width: 1.5em;
       height: 1.5em;
@@ -107,11 +151,11 @@ a {
       font-size: 30px; }
   .footer .total2 {
     flex: 1;
-    background: fuchsia;
+    background: #dd3d97;
     padding: 10px 0;
     color: white; }
   .footer .total3 {
     flex: 1;
-    background: firebrick;
+    background: #8e488e;
     padding: 10px 0;
     color: white; }

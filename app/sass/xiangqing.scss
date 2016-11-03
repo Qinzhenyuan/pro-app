@@ -46,14 +46,24 @@ a {
 .tu {
     text-align: center;
 }
-.details p {
+.tu img{
+    width: 70%;
+    height: 300px;
+}
+.details  {
+    p{
     color: gray;
     font-size: 1em;
-}
-.details .b {
+    }
+    .b {
     color: black;
     font-size: 1.2em;
 }
+.jg{
+    color: red;
+}
+}
+
 .pj {
     border-bottom: 8px solid darkgray;
 }
@@ -94,7 +104,7 @@ a {
      position: relative;
      .shu{
          display: block;
-         background: red;
+         background:rgb(142,72,142);
          border-radius: 50%;
          width: 1.5em;
          height: 1.5em;
@@ -111,14 +121,14 @@ a {
 }
 .total2 {
     flex: 1;
-    background: fuchsia;
+    background:rgb(221,61,151);
      padding: 10px 0;
-     color: white;
+     color:white;
 }
 
 .total3 {
     flex: 1;
-    background: firebrick;
+    background: rgb(142,72,142);
      padding: 10px 0;
      color: white;
 }
