@@ -33,7 +33,7 @@
 				</ul>
 			</div>
 		</header>
-		<form class="ziliao">
+		<form class="ziliao" action="personalCenter.html">
 			<div>
 				<label for="nickname">用户名</label>
 				<input type="text" id="nickname" name="nickname" autofocus required />
@@ -45,11 +45,11 @@
 			<div>
 				<label class="last" for="shippingAddress">收货地址</label>
 				<p class="fourbox">
-					<input type="text" id="shippingAddress" name="shippingAddress" list="provincelist" placeholder="选择省" />
+					<input type="text" class="shippingAddress" name="shippingAddress" list="provincelist" placeholder="选择省" />
 					<datalist id="provincelist"></datalist>
-					<input type="text" id="shippingAddress" name="shippingAddress" list="citylist" placeholder="选择市" />
+					<input type="text" class="shippingAddress" name="shippingAddress" list="citylist" placeholder="选择市" />
 					<datalist id="citylist"></datalist>
-					<input type="text" id="shippingAddress" name="shippingAddress" list="countylist" placeholder="选择区/县" />
+					<input type="text" class="shippingAddress" name="shippingAddress" list="countylist" placeholder="选择区/县" />
 					<datalist id="countylist"></datalist>
 					<textarea class="adress" placeholder="详细地址"></textarea>
 				</p>
