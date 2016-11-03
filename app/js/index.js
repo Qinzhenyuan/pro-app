@@ -14,7 +14,7 @@ $(function(){
 	//加载的索引
 	var index = -1;
 	//ajax加载 先加载5个；
-//	$.ajax();
+	$.ajax();
 	
 	$(".hxy-container").scroll(function(){
 		//回到顶部；
@@ -24,7 +24,7 @@ $(function(){
 		var $ctTop = $(this).scrollTop();
 
 		var $proHeight = $(".hxy-pro-list").height();
-		if($ctTop == $proHeight*5){
+		if($ctTop == $proHeight*3){
 			proNum += 16;
 			$.ajax();
 		}

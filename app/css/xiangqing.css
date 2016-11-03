@@ -13,9 +13,9 @@
 	text-align: center;
 	display: inline-block;
 	flex: 1;
-	padding: 5px 0;
+	padding:5px 0;
 
-	margin: 0
+	margin: 0;
 }
 
 .xheader .xheader_menu span {
