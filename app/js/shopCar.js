@@ -1,12 +1,15 @@
 ;(function(){
 	$(function(){
 		//模拟数据 本地存储
-		var datalist = [{title:"长款两折钱包",code:"goods1",imgUrl:"../img/list2.jpg",price:569},{title:"marysharon美丽誓颜小魔球",code:"goods3",imgUrl:"../img/list_kouhong.jpg",price:119}];
+		var datalist = 	[	
+							{title:"长款两折钱包",code:"goods1",imgUrl:"../img/list2.jpg",price:569,num:4},
+							{title:"marysharon美丽誓颜小魔球",code:"goods3",imgUrl:"../img/list_kouhong.jpg",price:119,num:6},
+							{title:"s990纯银佛教心经手镯",code:"goods5",imgUrl:"../img/list_yin2.jpg",price:1425,num:3}
+						];
 		//本地存储
 		localStorage.setItem("datalist",JSON.stringify(datalist));
 		
 		var data = JSON.parse(localStorage.getItem("datalist"));
-		//console.log(data)
 		
 		//内容框
 		//内容生成
@@ -14,7 +17,7 @@
 		data.forEach(function(ele,idx){
 			var $goods = $("<div/>").addClass("goods"+" "+ele.code);
 			var $part1 = $("<div/>").addClass("part1").html("<span class='iconfont icon-yuanquan check'></span><img src="+ele.imgUrl+" />");
-			var $part2 = $("<div/>").addClass("part2").html("<h4>"+ele.title+"</h4><p data-price="+ele.price+">&yen;"+ele.price+"</p><div class='shuliang'><span class='sub iconfont icon-jian'></span><span class='num'>1</span><span class='add iconfont icon-jia'></span><span class='iconfont icon-lajitong0-copy del'></span></div>");
+			var $part2 = $("<div/>").addClass("part2").html("<h4>"+ele.title+"</h4><p data-price="+ele.price+">&yen;"+(ele.price*ele.num)+"</p><div class='shuliang'><span class='sub iconfont icon-jian'></span><span class='num'>"+ele.num+"</span><span class='add iconfont icon-jia'></span><span class='iconfont icon-lajitong0-copy del'></span></div>");
 			$goods.append($part1).append($part2).appendTo($xcontent);
 		});
 		
@@ -38,23 +41,25 @@
 			var dq_Price = parseInt($(this).parent().prev().attr("data-price"));
 			//当前商品单价*总价得到的价格
 			var js_price =parseInt($(this).parent().prev().html().substring(1));
-			console.log(shuliang)
 			if(shuliang <= 1){
 				shuliang = 1;
 			}else{
 				shuliang += -1; 
 				js_price -= dq_Price;
+				
+				//判断之前是否有添加
+				if($total.html() == "请选择购物车"){
+					var total_price = 0;
+				}else{
+					var total_price = parseInt($total.find("span").html());
+					total_price -= dq_Price;
+					//更新
+					$total.html("去结算( &yen; <span>"+total_price+" </span>)");
+				}
 			}
 			//更新
 			$(this).next().html(shuliang);
 			$(this).parent().prev().html("&yen;"+js_price);
-			
-			//判断之前是否有添加
-			if($total.html() == "请选择购物车"){
-				var total_price = 0;
-			}else{
-				var total_price = parseInt($total.find("span").html());
-			}
 			
 		});
 		//加
@@ -70,6 +75,16 @@
 			//更新
 			$(this).prev().html(shuliang);
 			$(this).parent().prev().html("&yen;"+js_price);
+			
+			//判断之前是否有添加
+			if($total.html() == "请选择购物车"){
+				var total_price = 0;
+			}else{
+				var total_price = parseInt($total.find("span").html());
+				total_price += dq_Price;
+				//更新
+				$total.html("去结算( &yen; <span>"+total_price+" </span>)");
+			}
 		});
 		//点击删除
 		$del.singleTap(function(){
@@ -102,7 +117,7 @@
 				}
 				sumPrice += total_price;
 				//更新
-				$total.html("去结算( &yen; <span>"+sumPrice+" </span>)")
+				$total.html("去结算( &yen; <span>"+sumPrice+" </span>)");
 			}
 		});
 		

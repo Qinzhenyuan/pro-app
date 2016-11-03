@@ -22,12 +22,15 @@
 
 .xheader .xheader_menu span {
   font-size: 20px;
-  display: inline-block;
+  display: flex;
   margin: 0 10px;
-  flex: 1; }
+  flex: 1;
+  justify-content: flex-end; }
 
-.xheader .xheader_menu span:last-child {
-  text-align: right; }
+.xheader .xheader_menu a {
+  flex: 1;
+  color: white;
+  margin: 0 10px; }
 
 .xcontent {
   margin-top: 40px;
@@ -91,6 +94,38 @@
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px; }
 
+.caidan {
+  display: none;
+  z-index: 3;
+  background-color: #111;
+  opacity: 0.7;
+  position: fixed;
+  right: 10px;
+  top: 40px; }
+
+.caidan::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #111;
+  position: absolute;
+  right: 10px;
+  top: -20px; }
+
+.caidan li {
+  width: 120px;
+  height: 34px;
+  border-bottom: 1px solid #122B40;
+  line-height: 34px;
+  text-align: center; }
+
+.caidan li a {
+  color: white;
+  display: block;
+  width: 120px;
+  height: 34px; }
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -121,7 +156,7 @@
   color: #8e488e; }
 
 .footer .total {
-  flex: 3;
+  flex: 2;
   background: #8e488e;
   display: flex;
   justify-content: center;
