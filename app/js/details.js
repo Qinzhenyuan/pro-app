@@ -1,20 +1,8 @@
-
-
 ;(function(){	
-	
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
-	
-	
-	
-	
-	
+	console.log(11111);
 	//生成商品详细
-  var data = JSON.parse(localStorage.getItem("goods"));
-       console.log(data.title);
-
+ 	 var data = JSON.parse(localStorage.getItem("goods"));
 
 //内容生成
 
@@ -26,8 +14,44 @@ document.addEventListener("DOMContentLoaded", function() {
            var $qcontent = $(".tu div:first").find("img");
 
 
-	$qcontent.attr("src",data.imgUrl);
-	
+		$qcontent.attr("src",data.imgUrl);
+		
+		
+		//点击加入购物车
+	var $addtoCar = $("#addtoCar");
+	//$addtoCar.singleTap(function(){
+	$addtoCar.click(function(){
+		//先获取本地存储
+		var datalist = localStorage.getItem('datalist');
+		//如果没有则返回空数组
+		datalist = datalist ? JSON.parse(datalist) : [];
+			//本地存储
+			var flag = false; //用于判断数组中是否已存在该商品
+			datalist.forEach(function(ele,idx){
+				//如果有相等的 则已存在
+				if(ele.code == data.code){
+					flag = true;
+					//已存在该商品  在原来数量上加一
+					ele.num += 1; 
+				}
+			});
+			//如果数组不存在该商品,则保存该商品信息
+			if(!flag){
+				//用对象存储当前信息
+				//var obj = {};
+//				obj.title = $title; //商品名称
+//				obj.code = $code; //商品编号
+//				obj.imgUrl = $imgUrl; // 商品图片路径
+//				obj.price = $price;  // 商品价格
+//				obj.num = $num; //商品数量
+				// 把当前商品写入数组
+				datalist.push(data);
+			}
+			
+			// 保存到本地存储
+			localStorage.setItem('datalist',JSON.stringify(datalist));
+			console.log(datalist);
+	});
 	
 	 
 
@@ -42,7 +66,7 @@ pagination: '.swiper-pagination',
 	spaceBetween: 30,
 });
 
-
+	
 
 
 

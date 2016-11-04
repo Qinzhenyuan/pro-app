@@ -1,147 +1,148 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-<meta charset="UTF-8">
+	<head>
+		<meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width initial-scale=1 " />
-<title>商品详情页</title>
-<link rel="stylesheet" type="text/css" href="../css/details.css" />
-<link rel="stylesheet" href="../font/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
-<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
-<script src="../js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/zepto/touch.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/details.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/menu.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="width=device-width initial-scale=1 " />
+		<title>商品详情页</title>
+		<link rel="stylesheet" type="text/css" href="../css/details.css" />
+		<link rel="stylesheet" href="../font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/zepto/touch.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/details.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/menu.js" type="text/javascript" charset="utf-8"></script>
 
+	</head>
 
+	<body>
 
-</head>
+		<div class="tabs">
 
-<body>
+			<!--头部导航-->
+			<header class="xheader">
+				<!--头部菜单-->
+				<div class="xheader_menu">
+					<a href="javascript:history.go(-1)" class="go-back">
+						<span class="iconfont icon-fanhui"></span>
+					</a>
+					<h2 class=" active">商品详情</h2>
+					<h2 class="">评价</h2>
+					<span class="iconfont icon-fenlei"></span>
+					<ul class="caidan">
+						<li>
+							<a href="../index.html">首页</a>
+						</li>
+						<li>
+							<a href="list.html">积分区</a>
+						</li>
+						<li>
+							<a href="details.html">夺宝区</a>
+						</li>
+						<li>
+							<a href="register.html">一元购</a>
+						</li>
+						<li>
+							<a href="shopCar.html">购物车</a>
+						</li>
+						<li>
+							<a href="personalCenter.html">个人中心</a>
+						</li>
+					</ul>
+				</div>
+			</header>
 
-<div class="tabs">
+		</div>
+		<div id="tabs-container" class="swiper-container swiper-container-horizontal">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide swiper-slide-active">
+					<div class="content-slide">
+						<ul class="news-list">
 
-<!--头部导航-->
-<header class="xheader">
-<!--头部菜单-->
-<div class="xheader_menu">
-	<a href="javascript:history.go(-1)" class="go-back" >
-<span class="iconfont icon-fanhui"></span>
-</a>
-<h2 class=" active">商品详情</h2>
-<h2 class="">评价</h2>
-<span class="iconfont icon-fenlei"></span>
-<ul class="caidan">
-	<li><a href="../index.html">首页</a></li>
-	<li><a href="list.html">积分区</a></li>
-	<li><a href="details.html">夺宝区</a></li>
-	<li><a href="register.html">一元购</a></li>
-	<li><a href="shopCar.html">购物车</a></li>
-	<li><a href="personalCenter.html">个人中心</a></li>
-</ul>
-</div>
-</header>
+							<!--图片轮播-->
+							<div class="bao">
 
-</div>
-<div id="tabs-container" class="swiper-container swiper-container-horizontal">
-<div class="swiper-wrapper">
-<div class="swiper-slide swiper-slide-active">
-<div class="content-slide">
-<ul class="news-list">
+								<div class="swiper-container">
 
-<!--图片轮播-->
-<div class="bao">
+									<div class="swiper-wrapper tu">
 
-<div class="swiper-container">
+										<div class="swiper-slide"><img src="../img/54.jpg" /></div>
+										<div class="swiper-slide"><img src="../img/55.jpg" /></div>
+										<div class="swiper-slide"><img src="../img/56.jpg" /></div>
 
-<div class="swiper-wrapper tu">
+									</div>
+									<!--图片按钮 -->
+									<div class="swiper-pagination"></div>
 
-<div class="swiper-slide"><img src="../img/54.jpg" /></div>
-<div class="swiper-slide"><img src="../img/55.jpg" /></div>
-<div class="swiper-slide"><img src="../img/56.jpg" /></div>
+								</div>
 
-</div>
-<!--图片按钮 -->
-<div class="swiper-pagination"></div>
+								<!--商品信息-->
 
-</div>
+								<section class="details">
+									<p class="ming">斯文印花黑灰色短袖连衣裙</p>
+									<p class="jg">￥120</p>
+									<p><span class="b">品牌名称：</span>LETDIOSTO</p>
+									<p><span class="b">商品名称:</span>女款黑白色条纹上衣套装</p>
+									<p><span class="b">产地：</span>中国</p>
+									<p><span class="b">材质：</span>粘纤77% 聚酯纤维18.5%</p>
+									<p><span class="b">洗涤说明：</span>用水洗谢谢</p>
 
-<!--商品信息-->
+								</section>
+							</div>
 
-<section class="details">
-<p class="ming">斯文印花黑灰色短袖连衣裙</p>
-<p class="jg">￥120</p>
-<p><span class="b">品牌名称：</span>LETDIOSTO</p>
-<p><span class="b">商品名称:</span>女款黑白色条纹上衣套装</p>
-<p><span class="b">产地：</span>中国</p>
-<p><span class="b">材质：</span>粘纤77% 聚酯纤维18.5%</p>
-<p><span class="b">洗涤说明：</span>用水洗谢谢</p>
+							<section class="lazy">
 
-</section>
-</div>
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (1).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (2).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (3).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (4).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (5).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (6).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (7).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (8).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (9).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (10).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (11).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (12).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (13).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (14).jpg" width="100%" heigh="100%">
+								<img class="lazy" src="../img/loging.gif" data-original="../img/tu (15).jpg" width="100%" heigh="100%">
 
-<section class="lazy">
+							</section>
 
+						</ul>
+					</div>
+				</div>
+				<div class="swiper-slide swiper-slide-next">
+					<div class="content-slide">
+						<ul class="news-list">
 
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (1).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (2).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (3).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (4).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (5).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (6).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (7).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (8).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (9).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (10).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (11).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (12).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (13).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (14).jpg" width="100%" heigh="100%">
-<img class="lazy" src="../img/loging.gif" data-original="../img/tu (15).jpg" width="100%" heigh="100%">
+						</ul>
 
-</section>
+					</div>
+				</div>
 
-</ul>
-</div>
-</div>
-<div class="swiper-slide swiper-slide-next">
-<div class="content-slide">
-<ul class="news-list">
-
-
-
-
-</ul>
-
-</div>
-</div>
-
-</div>
-
-	<footer class="footer">
-			<div class="total1">
-				<p><span class="iconfont icon-iconfont08"></span>  <span class="shu">0</span></p>
 			</div>
-			<div class="total2">
-				<a href="shopCar.html" class="go-back">加入购物车</a>
-			</div>
-			<div class="total3">
-				<a href="shopCar.html" class="go-back">立即购买</a>
-			</div>
-	</footer>
-		
-</div>
 
+			<footer class="footer">
+				<div class="total1">
+					<p><span class="iconfont icon-iconfont08"></span> <span class="shu">0</span></p>
+				</div>
+				<div class="total2" id="addtoCar">
+					<a href="shopCar.html" class="go-back">加入购物车</a>
+				</div>
+				<div class="total3">
+					<a href="shopCar.html" class="go-back">立即购买</a>
+				</div>
+			</footer>
 
+		</div>
 
-
-
-
-</body>
+	</body>
 
 </html>

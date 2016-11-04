@@ -176,12 +176,13 @@
 			obj.code = $code; //商品编号
 			obj.imgUrl = $imgUrl; // 商品图片路径
 			obj.price = $price;  // 商品价格
+			obj.num = 1; //默认一件
 			
 			//储存
 			localStorage.setItem("goods",JSON.stringify(obj));
 			
 			//跳转到详情页
-			location.href = "xiangqing.html";
+			location.href = "details.html";
 			
 		});
 		 
