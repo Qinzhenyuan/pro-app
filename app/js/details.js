@@ -73,7 +73,7 @@ $.ajax();
 	$(window).on("scroll",function(){
 	
 	var scroolltop=$(window).scrollTop();
-if(scroolltop>=$(document).height()-$(window).height()-8000){
+if(scroolltop>=$(document).height()-$(window).height()-200){
 	$.ajax();
 	
 }
