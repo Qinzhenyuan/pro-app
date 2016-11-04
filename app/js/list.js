@@ -178,7 +178,7 @@
 			obj.price = $price;  // 商品价格
 			
 			//储存
-			localStorage.setItem("goods",obj);
+			localStorage.setItem("goods",JSON.stringify(obj));
 			
 			//跳转到详情页
 			location.href = "xiangqing.html";
