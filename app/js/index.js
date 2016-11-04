@@ -8,30 +8,9 @@ document.addEventListener('DOMContentLoaded',function(){
 
 });
 $(function(){
-	
-	//每次加载的数量；
-	var proNum = 5;
-	//加载的索引
-	var index = -1;
-	//ajax加载 先加载5个；
-	$.ajax();
-	
-	$(".hxy-container").scroll(function(){
-		//回到顶部；
-		$(".hxy-backTop").on("click",function(){
-			$(".hxy-container").scrollTop(0);
-		})
-		var $ctTop = $(this).scrollTop();
 
-		var $proHeight = $(".hxy-pro-list").height();
-		if($ctTop == $proHeight*3){
-			proNum += 16;
-			$.ajax();
-		}
-	})
-		$("img").lazyload({
-			effect:'fadeIn'
-		});
+	
+	
 	//用ajax获取数据实现加载；
 	$.ajaxSetup({
 		url:"data/indexpro.json",
@@ -39,8 +18,7 @@ $(function(){
 		success:function(data){
 			console.log(data);
 			$.each(data, function(idx,item) {
-				//先加载部分；
-				if(idx < proNum){
+
 					//创建标签，并添加hxy-project
 					var $dl = $("<dl/>").addClass("hxy-pro-list");
 					var $dt = $("<dt/>");
@@ -49,8 +27,8 @@ $(function(){
 					var $a2 = $("<a/>").attr({href:item.href});
 					var $a3 = $("<a/>").attr({href:item.href})
 					//创建储产品图片；
-//					$("<img src='img/loading.gif' data-original="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
-					$("<img src="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
+					$("<img data-original="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
+					//$("<img src="+item.imgurl+"/>").addClass("lazy").appendTo($a);				
 					//产品价格和产品说明；
 					$("<p/>").addClass("hxy-pro-intr").html(item.title).appendTo($a2);
 					$("<span/>").addClass("hxy-integral").html(item.proPri).appendTo($a3);
@@ -62,15 +40,28 @@ $(function(){
 					$dt.appendTo($dl);
 					$dd.appendTo($dl);
 					$dl.appendTo($(".hxy-project"));
-				}
+				
 			})		
 		},error:function(xhr,type){
 			alert("Ajax error")
 		}
 	});
+	     //运行加载数据
+	     $.ajax();
+	    
 
+	$(".hxy-container").scroll(function(){
+		//回到顶部；
+		$(".hxy-backTop").on("click",function(){
+			$(".hxy-container").scrollTop(0);
+		})
+		$("img.lazy").lazyload({
+			effect:'fadeIn'
+		});
 	
-	
+		
+	})
+		
 //	$(".hxy-container").scroll(function() {
 //	var $scrollTop = $(window).scrollTop();
 //	console.log($scrollTop);
