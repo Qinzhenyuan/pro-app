@@ -13,7 +13,7 @@ $(function(){
 	
 	//用ajax获取数据实现加载；
 	$.ajaxSetup({
-		url:"data/indexpro.json",
+		url:"json/indexpro.json",
 		dataType:"json",
 		success:function(data){
 			console.log(data);
