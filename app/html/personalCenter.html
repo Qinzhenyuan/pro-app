@@ -13,7 +13,6 @@
 		<script type="text/javascript" src="../js/zepto/zepto.min.js" ></script>
 		<script type="text/javascript" src="../js/zepto/touch.js" ></script>
 		<script src="../js/jquery-1.12.0.js"></script>
-		<script src="../js/personalCenter.js"></script>
 		<script src="../js/menu.js"></script>
 	</head>
 	<body>
@@ -29,7 +28,7 @@
 					<li><a href="../index.html">首页</a></li>
 					<li><a href="list.html">积分区</a></li>
 					<li><a href="details.html">夺宝区</a></li>
-					<li><a href="register.html">一元购</a></li>
+					<li><a href="register.html">登录</a></li>
 					<li><a href="shopCar.html">购物车</a></li>
 					<li><a href="personalCenter.html">个人中心</a></li>
 				</ul>
@@ -38,12 +37,12 @@
 		<!--头像栏-->
 		<section class="first">
 			<div class="leftimg">
-				<a class="touxiang" href="dataPage.html"><img src="../img/18.jpg"/></a>
+				<a class="touxiang" id="btncamera" ><img src="../img/18.jpg" id="pic" /></a>
 				<div>
 					<h3>1234567890</h3>
 					<a href="#"><img src="../img/18.jpg"/></a><span>普通会员</span>				
 				</div>
-				<p>></p>
+				<a href="dataPage.html" class="tiaozhuan">></a>
 			</div>
 			<ul>
 
@@ -112,7 +111,7 @@
 					</a>
 				</div>
 				<div>
-					<a href="#">
+					<a href="list.html">
 					<span class="iconfont  icon-jifen"></span>
 					<span>积分区</span>
 					</a>
@@ -120,7 +119,7 @@
 				<div >
 					<a href="register.html">
 					<span class="iconfont icon-lifangti"></span>
-					<span>一元购</span>
+					<span>登录</span>
 					</a>
 				</div>
 				<div  >
@@ -137,5 +136,7 @@
 				</div>
 			</nav>
 		</footer>
+		<script type="text/javascript" src="../cordova.js"></script>
+		<script src="../js/personalCenter.js"></script>
 	</body>
 </html>

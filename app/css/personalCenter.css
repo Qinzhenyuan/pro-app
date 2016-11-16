@@ -53,7 +53,9 @@ section {
   font-size: 18px;
   font-weight: bold; }
 
-.first .leftimg p {
+.first .leftimg .tiaozhuan {
+	color: white;
+	display: block;
   position: absolute;
   right: 20px;
   top: 30px; }

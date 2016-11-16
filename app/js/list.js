@@ -124,6 +124,7 @@
 			//加载
 			$.ajax({
 				url:"../json/list.json",
+				dataType : "json",
 				success:function(res){
 					$.each(res, function(idx,ele) {
 						if(ele.category == $fl_html){
@@ -193,6 +194,7 @@
 		function ajaxJz(){
 			$.ajax({
 				url:"../json/list.json",
+				dataType : "json",
 				success:function(res){
 					$.each(res, function(idx,ele) {
 						if(num > idx && index < idx){

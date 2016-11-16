@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
 });
 $(function(){
-
-	
-	
 	//用ajax获取数据实现加载；
 	$.ajaxSetup({
 		url:"json/indexpro.json",
@@ -43,24 +40,24 @@ $(function(){
 				
 			})		
 		},error:function(xhr,type){
-			alert("Ajax error")
+			alert("Ajax error");
 		}
 	});
-	     //运行加载数据
-	     $.ajax();
-	    
+	
+	//运行加载数据
+	$.ajax();
 
 	$(".hxy-container").scroll(function(){
 		//回到顶部；
 		$(".hxy-backTop").on("click",function(){
 			$(".hxy-container").scrollTop(0);
-		})
-		$("img.lazy").lazyload({
-			effect:'fadeIn'
 		});
+		$(".hxy-project img").lazyload({
+			effect:'fadeIn'
+		});   
+	});
 	
-		
-	})
+	
 		
 //	$(".hxy-container").scroll(function() {
 //	var $scrollTop = $(window).scrollTop();
